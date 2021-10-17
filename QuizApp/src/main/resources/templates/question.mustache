@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question</title>
+</head>
+<body>
+<h1>Test</h1>
+<p>Utilizatorul: {{userAccess.name}}.</p>
+<p></p>
+<p><strong>{{question.text}}</strong></p>
+<form action="/submit-question-answer?userAccessId={{userAccess.id}}" method="post">
+<input type="hidden" name="question" value="{{question.id}}">
+<ol>
+    {{#question.choices}}
+        <li><input type="radio" name="choice" value="{{id}}">{{text}}</li>
+    {{/question.choices}}
+</ol>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
